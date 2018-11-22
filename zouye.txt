@@ -1,0 +1,31 @@
+sudo mysql -u root -p
+create table gwc(id int auto_increment primary key,
+    -> favourite varchar(20),
+    -> discountnotice varchar(20) not null,
+    -> doubletwelvedream varchar(20) not null,                                                                                                         
+    -> name varchar(20));
+
+insert into gwc(id,favourite,discountnotice,doubletwelvedream,name)value
+    -> (1,"shi","maorongwanju","maiyishuangqiuxie","hwh");
+
+insert into gwc(favourite,discountnotice,doubletwelvedream,name)value
+    -> ("fu","mianfu","wu","zly"),
+    -> ("shi","shuben","lingshi","xtt"),
+    -> ("fu","mackbook","ouwen3","sl");
+
+update gwc set doubletwelvedream="mianxie" where doubletwelvedream="wu";
+
+alter table gwc add isdelete int default 0;
+
+update gwc set isdelete=1 where name="xtt";
++----+-----------+----------------+-------------------+------+----------+
+| id | favourite | discountnotice | doubletwelvedream | name | isdelete |
++----+-----------+----------------+-------------------+------+----------+
+|  1 | shi       | maorongwanju   | maiyishuangqiuxie | hwh  |        0 |
+|  2 | fu        | mianfu         | mianxie           | zly  |        0 |
+|  3 | shi       | shuben         | lingshi           | xtt  |        1 |
+|  4 | fu        | mackbook       | ouwen3            | sl   |        0 |
++----+-----------+----------------+-------------------+------+----------+
+
+
+
