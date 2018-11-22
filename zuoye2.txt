@@ -1,0 +1,89 @@
+select country_name,region_id from countries where region_id>2 and region_id<4;
+--------------+-----------+
+| country_name | region_id |
++--------------+-----------+
+| Australia    | 3         |
+| China        | 3         |
+| India        | 3         |
+| Japan        | 3         |
+| Malaysia     | 3         |
+| Singapore    | 3         |
++--------------+-----------+
+select distinct region_id from countries;
+-----------+
+| region_id |
++-----------+
+| 2         |
+| 3         |
+| 1         |
+| 4         |
++-----------+
+select distinct location_id from departments;
++-------------+
+| location_id |
++-------------+
+| 1700        |
+| 1800        |
+| 2400        |
+| 1500        |
+| 1400        |
+| 2700        |
+| 2500        |
++-------------+
+
+select count(location_id) from departments;
++--------------------+
+| count(location_id) |
++--------------------+
+|                 27 |
++--------------------+
+select *from departments order by department_id desc;
++---------------+----------------------+------------+-------------+
+| DEPARTMENT_ID | DEPARTMENT_NAME      | MANAGER_ID | LOCATION_ID |
++---------------+----------------------+------------+-------------+
+|           270 | Payroll              |            | 1700        |
+|           260 | Recruiting           |            | 1700        |
+|           250 | Retail Sales         |            | 1700        |
+|           240 | Government Sales     |            | 1700        |
+|           230 | IT Helpdesk          |            | 1700        |
+|           220 | NOC                  |            | 1700        |
+|           210 | IT Support           |            | 1700        |
+|           200 | Operations           |            | 1700        |
+|           190 | Contracting          |            | 1700        |
+|           180 | Construction         |            | 1700        |
+|           170 | Manufacturing        |            | 1700        |
+|           160 | Benefits             |            | 1700        |
+|           150 | Shareholder Services |            | 1700        |
+|           140 | Control And Credit   |            | 1700        |
+|           130 | Corporate Tax        |            | 1700        |
+|           120 | Treasury             |            | 1700        |
+|           110 | Accounting           | 205        | 1700        |
+|           100 | Finance              | 108        | 1700        |
+|            90 | Executive            | 100        | 1700        |
+|            80 | Sales                | 145        | 2500        |
+|            70 | Public Relations     | 204        | 2700        |
+|            60 | IT                   | 103        | 1400        |
+|            50 | Shipping             | 121        | 1500        |
+|            40 | Human Resources      | 203        | 2400        |
+|            30 | Purchasing           | 114        | 1700        |
+|            20 | Marketing            | 201        | 1800        |
+|            10 | Administration       | 200        | 1700        |
++---------------+----------------------+------------+-------------+
+
+select *from departments order by department_id desc limit 0,4;
++---------------+------------------+------------+-------------+
+| DEPARTMENT_ID | DEPARTMENT_NAME  | MANAGER_ID | LOCATION_ID |
++---------------+------------------+------------+-------------+
+|           270 | Payroll          |            | 1700        |
+|           260 | Recruiting       |            | 1700        |
+|           250 | Retail Sales     |            | 1700        |
+|           240 | Government Sales |            | 1700        |
++---------------+------------------+------------+-------------+
+
+select sum(manager_id) from departments;
++-----------------+
+| sum(manager_id) |
++-----------------+
+|            1704 |
++-----------------+
+
