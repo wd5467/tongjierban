@@ -1,0 +1,11 @@
+create table yh(ID int auto_increment primary key, name varchar(10), method  set('app','pc','ipad'), logindate  datetime);
+insert into yh(name,method,logindate)value (614,"pc",20181027);
+insert into yh(name,method,logindate)value("zy","app",20181123), ("wsj","ipad",20171217), ("ll","pc",20180611);
+select case when abs(datediff(logindate,now()))>30 then "你去死吧" when abs(datediff(logindate,now()))>9  then "你特么的回不回来" when abs(datediff(logindate,now()))>7  then "快回来小天才" end from yh;
+-------------------------------------------------------+
+| 你特么的回不回来                                                                                                                                                                                            |
+| NULL                                                                                                                                                                                                        |
+| 你去死吧                                                                                                                                                                                                    |
+| 你去死吧                                                                                                                                                                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+

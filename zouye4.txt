@@ -1,0 +1,40 @@
+create table movies(id int auto_increment primary key, moviename varchar(20) not null, year date, direct varchar(20),pingfen varchar(20));
+insert into movies(moviename,year,direct,pingfen)values ("xiebuyazheng",20180612,"jiangwen",7.9);
+insert into movies(moviename,year,direct,pingfen)values ("chuanqidedansheng",20180716,"beili",7.4), ("wobushiyaosheng",20180529,"xuzheng",9.1), ("gegelaoshi",20181126,"yindu",9.0), ("taitannikehao",20150817,"zhanmushi",9.2);
+select* from movies;
++----+-------------------+------------+-----------+---------+
+| id | moviename         | year       | direct    | pingfen |
++----+-------------------+------------+-----------+---------+
+|  1 | xiebuyazheng      | 2018-06-12 | jiangwen  | 7.9     |
+|  2 | chuanqidedansheng | 2018-07-16 | beili     | 7.4     |
+|  3 | wobushiyaosheng   | 2018-05-29 | xuzheng   | 9.1     |
+|  4 | gegelaoshi        | 2018-11-26 | yindu     | 9.0     |
+|  5 | taitannikehao     | 2015-08-17 | zhanmushi | 9.2     |
++----+-------------------+------------+-----------+---------+
+ select * from movies where moviename like "%qide%";
++----+-------------------+------------+--------+---------+
+| id | moviename         | year       | direct | pingfen |
++----+-------------------+------------+--------+---------+
+|  2 | chuanqidedansheng | 2018-07-16 | beili  | 7.4     |
++----+-------------------+------------+--------+---------+
+select * from movies where direct  like "%i";
++----+-------------------+------------+-----------+---------+
+| id | moviename         | year       | direct    | pingfen |
++----+-------------------+------------+-----------+---------+
+|  2 | chuanqidedansheng | 2018-07-16 | beili     | 7.4     |
+|  5 | taitannikehao     | 2015-08-17 | zhanmushi | 9.2     |
++----+-------------------+------------+-----------+---------+
+select * from movies where pingfen like "9.2";
++----+---------------+------------+-----------+---------+
+| id | moviename     | year       | direct    | pingfen |
++----+---------------+------------+-----------+---------+
+|  5 | taitannikehao | 2015-08-17 | zhanmushi | 9.2     |
++----+---------------+------------+-----------+---------+
+select * from movies where  year  like "%11%";
++----+------------+------------+--------+---------+
+| id | moviename  | year       | direct | pingfen |
++----+------------+------------+--------+---------+
+|  4 | gegelaoshi | 2018-11-26 | yindu  | 9.0     |
++----+------------+------------+--------+---------+
+
+
